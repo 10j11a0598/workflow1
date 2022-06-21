@@ -1,11 +1,18 @@
-name: running my job for every 5 mins
-on:
-  schedule:
-    - cron: '*/5 * * * *'
+name: First Cron Job
 
-    jobs:
-      test:
-        runs-on: ubuntu-latest
-        steps:
-          - name: this is a cron job
-            run: echo "this is my 1st job"
+on:
+
+  schedule:
+    -cron: "*/5 * * * *"
+
+jobs:
+
+  -cron:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Run a script
+        run: echo Hello, world!
+        
